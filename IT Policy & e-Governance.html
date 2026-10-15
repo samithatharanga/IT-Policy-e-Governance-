@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="si" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Policy & e-Governance | Interactive Study Guide & Exam Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans Sinhala', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: #f1f5f9;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .flip-card {
+      perspective: 1000px;
+    }
+    .flip-inner {
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-sky-500 selection:text-white pb-20">
+
+  <!-- Top Sticky Header -->
+  <header class="glass-nav sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20 font-bold text-xl">
+          🎓
+        </div>
+        <div>
+          <h1 class="font-bold text-base sm:text-lg text-white leading-tight">IT Policy & e-Governance</h1>
+          <p class="text-xs text-slate-400">Interactive Master Study Guide & Mock Exam (25 MCQs)</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs sm:text-sm font-medium">
+        <button onclick="switchTab('study')" id="tab-study" class="px-3.5 py-2 rounded-lg transition-all bg-sky-500 text-white shadow-md">
+          📚 පාඩම් මාලාව (Study Guide)
+        </button>
+        <button onclick="switchTab('cheatsheet')" id="tab-cheatsheet" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          ⚡ Cheat Sheet
+        </button>
+        <button onclick="switchTab('quiz')" id="tab-quiz" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          🎯 Practice Quiz
+        </button>
+      </div>
+
+      <!-- Share Button -->
+      <button onclick="sharePortal()" class="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-xs font-semibold transition-all">
+        <span>🔗 යාළුවන්ට Share කරන්න</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-4 pt-6">
+
+    <!-- Hero Banner & Progress Tracker -->
+    <div class="glass-card rounded-2xl p-5 sm:p-6 mb-6 relative overflow-hidden">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="space-y-1.5 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold">
+            <span>Undergraduate Level · Practice Assessment</span>
+            <span>•</span>
+            <span>25 Marks</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-white">
+            විභාගයට ලේසියෙන්ම ලකුණු 25/25 ගන්න සම්පූර්ණ අත්වැල! 🚀
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            හරි උත්තරේ විතරක් කටපාඩම් කරනවට වඩා <strong>"ඇයි මේ උත්තරේ හරි වුණේ?"</strong>, <strong>"අනිත් උත්තර 3 වැරදුණේ ඇයි?"</strong> සහ <strong>"Core Theory + Memory Tips"</strong> මෙතනින් ආසාවෙන් පාඩම් කරන්න.
+          </p>
+        </div>
+
+        <!-- Study Progress Box -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 min-w-[240px]">
+          <div class="flex justify-between items-center text-xs mb-2">
+            <span class="text-slate-400 font-medium">පාඩම් කරලා ඉවර ප්‍රමාණය:</span>
+            <span id="mastered-count" class="text-emerald-400 font-bold">0 / 25</span>
+          </div>
+          <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden mb-3">
+            <div id="mastered-bar" class="h-full bg-gradient-to-r from-sky-500 to-emerald-500 transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="flex justify-between gap-2">
+            <button onclick="resetMastered()" class="text-[11px] text-slate-400 hover:text-rose-400 transition">Reset Progress</button>
+            <button onclick="sharePortal()" class="md:hidden text-[11px] text-emerald-400 font-semibold">🔗 Share App</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         VIEW 1: STUDY GUIDE (පාඩම් මාලාව)
+         ========================================== -->
+    <section id="view-study" class="space-y-6">
+      
+      <!-- Search & Category Filter Bar -->
+      <div class="glass-card rounded-2xl p-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
+        <div class="relative w-full sm:w-72">
+          <input type="text" id="search-input" oninput="renderStudyGuide()" placeholder="ප්‍රශ්නයක් හෝ Keyword එකක් සොයන්න..." 
+            class="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-500">
+          <span class="absolute left-3 top-2.5 text-slate-400 text-sm">🔍</span>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5 w-full sm:w-auto" id="category-pills">
+          <button onclick="setCategory('all')" data-cat="all" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-500 text-white">සියල්ල (25)</button>
+          <button onclick="setCategory('part1')" data-cat="part1" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">1. මූලික සංකල්ප</button>
+          <button onclick="setCategory('part2')" data-cat="part2" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">2. Models (G2C/G2B)</button>
+          <button onclick="setCategory('part3')" data-cat="part3" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">3. Architecture</button>
+          <button onclick="setCategory('part4')" data-cat="part4" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">4. බාධක සහ කුළුණු</button>
+          <button onclick="setCategory('part5')" data-cat="part5" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">5. ලංකාවේ නීති (Acts)</button>
+          <button onclick="setCategory('part6')" data-cat="part6" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700">6. Global Case Studies</button>
+        </div>
+      </div>
+
+      <!-- Quick Summary Concept Boxes (Bento Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="glass-card rounded-xl p-4 border-l-4 border-l-sky-500">
+          <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">🔄 4 Interaction Models</div>
+          <ul class="text-xs space-y-1.5 text-slate-300">
+            <li><strong class="text-white">G2C (Citizen):</strong> උප්පැන්න සහතික, බිල් ගෙවීම්, NIC</li>
+            <li><strong class="text-white">G2B (Business):</strong> ටෙන්ඩර් (e-Procurement), බලපත්‍ර</li>
+            <li><strong class="text-white">G2G (Gov-to-Gov):</strong> දෙපාර්තමේන්තු දත්ත හුවමාරුව</li>
+            <li><strong class="text-white">G2E (Employee):</strong> පඩිපත් (Payroll), HR, පුහුණුවීම්</li>
+          </ul>
+        </div>
+        <div class="glass-card rounded-xl p-4 border-l-4 border-l-purple-500">
+          <div class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-1">⚖️ ශ්‍රී ලංකාවේ ප්‍රධාන පනත් 3</div>
+          <ul class="text-xs space-y-1.5 text-slate-300">
+            <li><strong class="text-white">Electronic Transactions (2006 No.19):</strong> Digital Signatures & e-Contracts නීතිමය බලය.</li>
+            <li><strong class="text-white">Computer Crimes (2007 No.24):</strong> Hacking, Data Tampering දඬුවම්.</li>
+            <li><strong class="text-white">PDPA (2022 No.9):</strong> Personal Data Processing & Privacy.</li>
+          </ul>
+        </div>
+        <div class="glass-card rounded-xl p-4 border-l-4 border-l-emerald-500">
+          <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">🏗️ Architecture & Pillars</div>
+          <ul class="text-xs space-y-1.5 text-slate-300">
+            <li><strong class="text-white">Access Layer:</strong> Websites, Mobile Apps, Kiosks</li>
+            <li><strong class="text-white">Middleware:</strong> වෙනස් Databases යා කරන පාලම</li>
+            <li><strong class="text-white">4 Pillars (IGRS):</strong> Infrastructure, Governance, Resources, Stakeholders</li>
+            <li><strong class="text-white">EGDI (OTH):</strong> Online Service + Telecom + Human Capital</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Questions Study Cards Container -->
+      <div id="study-cards-container" class="space-y-5"></div>
+
+    </section>
+
+    <!-- ==========================================
+         VIEW 2: CHEAT SHEET & FLASHCARDS
+         ========================================== -->
+    <section id="view-cheatsheet" class="hidden space-y-6">
+      <div class="glass-card rounded-2xl p-5 sm:p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              ⚡ විභාගයට යන්න කලින් විනාඩි 2න් බලාගන්න Cheat Sheet එක!
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">කාඩ් එකක් උඩ Click කරලා උත්තරේ මතකද කියලා පරීක්ෂා කරන්න (Interactive Flashcards) හෝ පහළ වගුව බලන්න.</p>
+          </div>
+          <button onclick="toggleAllFlashcards()" class="px-3.5 py-2 rounded-xl bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-semibold hover:bg-sky-500/30 transition">
+            🔄 කාඩ් සියල්ල හරවන්න (Flip All)
+          </button>
+        </div>
+
+        <!-- Flashcards Grid -->
+        <div id="flashcards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"></div>
+
+        <!-- Full Quick Table -->
+        <h4 class="text-sm font-bold text-sky-400 uppercase tracking-wider mb-3">📋 සම්පූර්ණ සාරාංශ වගුව (Quick Reference Table)</h4>
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-900/90 text-slate-300 border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-4 font-semibold">🔍 Keyword එක ප්‍රශ්නේ තිබ්බොත්...</th>
+                <th class="py-3 px-4 font-semibold text-emerald-400">✅ ඇස් පියාගෙන ගහන්න ඕන උත්තරේ!</th>
+              </tr>
+            </thead>
+            <tbody id="cheatsheet-table-body" class="divide-y divide-slate-800/70 bg-slate-900/40"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 3: INTERACTIVE MOCK QUIZ
+         ========================================== -->
+    <section id="view-quiz" class="hidden space-y-6">
+      <!-- Quiz Control Bar -->
+      <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl text-center">
+            <div class="text-[10px] text-slate-400 uppercase">Countdown</div>
+            <div id="quiz-timer" class="text-lg font-mono font-bold text-amber-400">30:00</div>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white">Practice Assessment Mode</div>
+            <div class="text-xs text-slate-400">උත්තරයක් Click කරපු ගමන් හරිද වැරදිද සහ පැහැදිලි කිරීම බලාගන්න පුළුවන්!</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span id="quiz-score-badge" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
+            ලකුණු: 0 / 25
+          </span>
+          <button onclick="resetQuiz()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition">
+            🔄 මුල සිට කරන්න
+          </button>
+        </div>
+      </div>
+
+      <div id="quiz-questions-container" class="space-y-4"></div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-emerald-600 text-white px-4 py-3 rounded-xl shadow-xl text-xs sm:text-sm font-semibold flex items-center gap-2">
+    <span>✅</span>
+    <span id="toast-msg">Copied!</span>
+  </div>
+
+  <script>
+    // Complete 25 Questions Data with Full Sinhala Explanations, Wrong Answer Eliminations & Memory Tips
+    const studyData = [
+      {
+        id: 1,
+        part: "part1",
+        partName: "📚 1 වන කොටස: මූලික සංකල්ප සහ යහපාලනය",
+        q: "Which statement best describes e-Governance?",
+        options: [
+          "A. Using computers only to store government documents.",
+          "B. Integrating ICT into governance to improve efficiency, transparency, and accountability.",
+          "C. Replacing all government employees with automated systems.",
+          "D. Providing internet access exclusively to government departments."
+        ],
+        correct: 1,
+        theory: `<strong>e-Governance (විද්‍යුත් රාජ්‍ය පාලනය)</strong> කියන්නේ රජයේ කාර්යාලවලට පරිගණක බෙදන එකවත්, කඩදාසි ලිපිගොනු PDF කරන එකවත් විතරක් නෙවෙයි. තොරතුරු හා සන්නිවේදන තාක්ෂණය (ICT) පාවිච්චි කරලා රටක පාලන ක්‍රියාවලියේ ප්‍රධාන දේවල් 3ක් දියුණු කරන එකයි:<br>
+        1. <strong>Efficiency (කාර්යක්ෂමතාව):</strong> වැඩ ඉක්මනින් සහ අඩු වියදමකින් කිරීම.<br>
+        2. <strong>Transparency (විනිවිදභාවය):</strong> රජය කරන දේවල් ජනතාවට විවෘතව පෙනීම.<br>
+        3. <strong>Accountability (වගවීම):</strong> ගන්නා තීරණවලට රජය ජනතාව ඉදිරියේ වගකීම.`,
+        whyWrong: [
+          "<strong>A වැරදියි:</strong> පරිගණකවල ලිපිගොනු save කරලා තියාගන්න එකට කියන්නේ Digitization/Computerization මිසක් e-Governance නෙවෙයි.",
+          "<strong>C වැරදියි:</strong> e-Governance වලින් රජයේ සේවකයන්ව සම්පූර්ණයෙන්ම අයින් කරන්නේ නෑ; එයාලගේ වැඩ පහසු කරන එකයි කරන්නේ.",
+          "<strong>D වැරදියි:</strong> රජයේ ආයතනවලට විතරක් ඉන්ටර්නෙට් දීලා වැඩක් නෑ, මහජනතාවත් මේකට සම්බන්ධ වෙන්න ඕනේ."
+        ],
+        tip: `MCQ එකක "only" (පමණයි), "exclusively" (සීමා වූ), "replacing all" (සියල්ල ඉවත් කිරීම) වගේ දැඩි වචන (Extreme words) තියෙනවා නම් 99% ක්ම ඒ උත්තර වැරදියි!`
+      },
+      {
+        id: 2,
+        part: "part1",
+        partName: "📚 1 වන කොටස: මූලික සංකල්ප සහ යහපාලනය",
+        q: "What is the main difference between e-Government and e-Governance?",
+        options: [
+          "A. E-Government focuses on service delivery, while e-Governance also includes participation, policy-making, and accountability.",
+          "B. E-Government involves citizens, while e-Governance involves only government employees.",
+          "C. E-Governance focuses only on purchasing government software.",
+          "D. E-Government requires advanced technology, while e-Governance does not use ICT."
+        ],
+        correct: 0,
+        theory: `ගොඩක් අය මේ වචන දෙක පටලවා ගන්නවා. වෙනස හරියටම තේරුම් ගන්න:<br>
+        • <strong>e-Government (කුඩා රවුම - Subset):</strong> මේකෙන් කරන්නේ රජයේ සේවාවන් ඔන්ලයින් දෙන එක විතරයි (Service Delivery). උදා: ඔන්ලයින් වාහන ආදායම් බලපත්‍රය ගැනීම, විභාග ප්‍රතිඵල බැලීම (One-way protocol).<br>
+        • <strong>e-Governance (ලොකු රවුම - Superset):</strong> මේකට e-Government එකත් අයිතියි. ඊට අමතරව මහජනතාවගෙන් අදහස් අරන් නීති/ප්‍රතිපත්ති හදන එක (Policy-making), ජනතා සහභාගීත්වය (Participation), සහ වගවීම (Accountability) ඇතුළත් වෙනවා (Two-way interaction).`,
+        whyWrong: [
+          "<strong>B වැරදියි:</strong> දෙකටම පුරවැසියන් (Citizens) සම්බන්ධ වෙනවා.",
+          "<strong>C වැරදියි:</strong> Software මිලදී ගැනීම කියන්නේ IT Procurement වල පොඩි කොටසක් විතරයි.",
+          "<strong>D වැරදියි:</strong> 'e-' කියන අකුරේම තේරුම Electronic (ICT භාවිතය) කියන එකයි. දෙකටම ICT ඕනේ."
+        ],
+        tip: `e-Government = Service Delivery (සේවා සැපයීම පමණයි) | e-Governance = Service + Participation + Policy + Accountability (පාලනයට හවුල් වීම)`
+      },
+      {
+        id: 3,
+        part: "part1",
+        partName: "📚 1 වන කොටස: මූලික සංකල්ප සහ යහපාලනය",
+        q: "A government publishes its spending records online so that citizens can examine how public funds are used. Which good governance principle is most directly supported?",
+        options: [
+          "A. Consensus-oriented",
+          "B. Responsive",
+          "C. Transparent",
+          "D. Equitable and inclusive"
+        ],
+        correct: 2,
+        theory: `එක්සත් ජාතීන්ගේ සංවිධානයට (UNESCAP) අනුව <strong>Good Governance Octagon (යහපාලන අෂ්ටකය)</strong> හි මූලධර්ම 8 ක් තියෙනවා.<br>
+        • <strong>Transparency (විනිවිදභාවය):</strong> තීරණ ගන්නා ආකාරය සහ මහජන මුදල් වියදම් කරන ආකාරය හංගන්නේ නැතුව, ඕනෑම පුරවැසියෙකුට පැහැදිලිව බලාගන්න පුළුවන් වීම.`,
+        whyWrong: [
+          "<strong>A. Consensus-oriented (සම්මුතිවාදී):</strong> විවිධ කණ්ඩායම්වල අදහස් අරන් හැමෝටම එකඟ විය හැකි පොදු තීරණයකට ඒම.",
+          "<strong>B. Responsive (ප්‍රතිචාරාත්මක):</strong> ජනතාවගේ ඉල්ලීම්වලට සාධාරණ කාලයක් ඇතුළත ඉක්මනින් ප්‍රතිචාර දැක්වීම.",
+          "<strong>D. Equitable and inclusive:</strong> සමාජයේ කිසිම කෙනෙක්ව කොන් නොකර හැමෝටම සමාන අවස්ථා දීම."
+        ],
+        tip: `ප්‍රශ්නයක "publishes online", "open data", "citizens can examine/see" වගේ වචන තිබ්බොත් ඒක කෙලින්ම Transparency (විනිවිදභාවය)!`
+      },
+      {
+        id: 4,
+        part: "part2",
+        partName: "🔄 2 වන කොටස: e-Governance අන්තර්ක්‍රියා ආකෘති 4 (Interaction Models)",
+        q: "A citizen submits a birth certificate application through an online government portal. Which e-Governance interaction model does this represent?",
+        options: ["A. G2G", "B. G2E", "C. G2B", "D. G2C"],
+        correct: 3,
+        theory: `පුරවැසියෙකු (Citizen) සහ රජය (Government) අතර සිදුවන සෘජු සේවා ගනුදෙනුවක් නිසා මෙය <strong>G2C (Government to Citizen)</strong> ආකෘතියට අයත් වේ. උප්පැන්න සහතික ගැනීම, විදුලි බිල් ගෙවීම, NIC/Passport අයදුම් කිරීම G2C වේ.`,
+        whyWrong: [
+          "<strong>A (G2G):</strong> රජයේ ආයතන දෙකක් අතර ගනුදෙනු.",
+          "<strong>B (G2E):</strong> රජය සහ රජයේ සේවකයින් අතර ගනුදෙනු.",
+          "<strong>C (G2B):</strong> රජය සහ ව්‍යාපාරික සමාගම් අතර ගනුදෙනු."
+        ],
+        tip: `ප්‍රශ්නේ "A citizen submits..." කියලා පැහැදිලිවම තියෙනවා. Citizen = C = G2C!`
+      },
+      {
+        id: 5,
+        part: "part2",
+        partName: "🔄 2 වන කොටස: e-Governance අන්තර්ක්‍රියා ආකෘති 4 (Interaction Models)",
+        q: "Two government departments share information through a common digital system to avoid requesting the same information repeatedly. Which interaction model is primarily involved?",
+        options: ["A. G2B", "B. G2G", "C. G2C", "D. G2E"],
+        correct: 1,
+        theory: `රජයේ දෙපාර්තමේන්තු හෝ ආයතන දෙකක් අතර තොරතුරු හුවමාරු කරගැනීම සහ සම්බන්ධීකරණය සිදුවන්නේ <strong>G2G (Government to Government)</strong> ආකෘතිය හරහායි. එකම තොරතුර ජනතාවගෙන් දෙපාරක් ඉල්ලන්නේ නැතුව ආයතන අතරේ බෙදාගන්න එකට <strong>"Once-Only Principle"</strong> කියලත් කියනවා.`,
+        whyWrong: [
+          "<strong>A, C, D වැරදියි:</strong> මෙතන ව්‍යාපාරයක් (B), පුරවැසියෙක් (C) හෝ සේවකයෙක් (E) ගැන කියවෙන්නේ නෑ, දෙපාර්තමේන්තු දෙකක් ගැන විතරයි කියන්නේ."
+        ],
+        tip: `"Two government departments share information" -> රජය සහ රජය = G2G.`
+      },
+      {
+        id: 6,
+        part: "part2",
+        partName: "🔄 2 වන කොටස: e-Governance අන්තර්ක්‍රියා ආකෘති 4 (Interaction Models)",
+        q: "Which of the following is the best example of G2B interaction?",
+        options: [
+          "A. An employee accesses an online government training programme.",
+          "B. A citizen pays an electricity bill online.",
+          "C. A company submits a government tender through an electronic procurement portal.",
+          "D. Two ministries exchange administrative records."
+        ],
+        correct: 2,
+        theory: `<strong>G2B (Government to Business)</strong> යනු රජය සහ ව්‍යාපාරික ආයතන අතර සිදුවන ගනුදෙනුයි. පෞද්ගලික සමාගමක් (Company) රජයේ ටෙන්ඩරයක් සඳහා ඔන්ලයින් අයදුම් කිරීම (e-Procurement) මීට හොඳම උදාහරණයයි.`,
+        whyWrong: [
+          "<strong>A වැරදියි:</strong> Employee කෙනෙක් training බලන එක G2E.",
+          "<strong>B වැරදියි:</strong> Citizen කෙනෙක් බිලක් ගෙවන එක G2C.",
+          "<strong>D වැරදියි:</strong> අමාත්‍යාංශ දෙකක් දත්ත හුවමාරු කරන එක G2G."
+        ],
+        tip: `Company / Business / Tender / e-Procurement / License renewal = G2B!`
+      },
+      {
+        id: 7,
+        part: "part2",
+        partName: "🔄 2 වන කොටස: e-Governance අන්තර්ක්‍රියා ආකෘති 4 (Interaction Models)",
+        q: "Which activity best represents the G2E model?",
+        options: [
+          "A. A government employee accesses an internal payroll system.",
+          "B. A business renews its operating licence online.",
+          "C. A citizen applies for a digital identity card.",
+          "D. A government department exchanges data with another ministry."
+        ],
+        correct: 0,
+        theory: `<strong>G2E (Government to Employee)</strong> ආකෘතිය අදාළ වන්නේ රජය සහ රාජ්‍ය සේවකයින් අතර සිදුවන අභ්‍යන්තර කටයුතු (වැටුප් විස්තර/Payroll, නිවාඩු අනුමත කිරීම්, HR, පුහුණුවීම්) සඳහායි.`,
+        whyWrong: [
+          "<strong>B වැරදියි:</strong> මේක G2B (Business).",
+          "<strong>C වැරදියි:</strong> මේක G2C (Citizen).",
+          "<strong>D වැරදියි:</strong> මේක G2G (Department to Ministry)."
+        ],
+        tip: `Government Employee + Internal Payroll / HR = G2E!`
+      },
+      {
+        id: 8,
+        part: "part1",
+        partName: "📚 1 වන කොටස: මූලික සංකල්ප සහ යහපාලනය",
+        q: "Which of the following is one of the principles in the Good Governance Octagon?",
+        options: [
+          "A. Vendor exclusivity",
+          "B. Centralised purchasing",
+          "C. Mandatory automation",
+          "D. Rule of law"
+        ],
+        correct: 3,
+        theory: `<strong>Good Governance Octagon (යහපාලන අෂ්ටකය)</strong> හි කරුණු 8:<br>
+        1. Rule of Law (නීතියේ ආධිපත්‍යය) | 2. Transparency (විනිවිදභාවය) | 3. Responsiveness (ප්‍රතිචාරාත්මක බව) | 4. Consensus Oriented (සම්මුතිවාදී බව) | 5. Equity and Inclusiveness (සාධාරණත්වය) | 6. Effectiveness and Efficiency (ඵලදායීතාවය සහ කාර්යක්ෂමතාව) | 7. Accountability (වගවීම) | 8. Participation (සහභාගීත්වය).`,
+        whyWrong: [
+          "<strong>A, B, C වැරදියි:</strong> එකම සමාගමකින් බඩු ගැනීම (Vendor exclusivity), මධ්‍යගතව මිලදී ගැනීම සහ අනිවාර්ය ස්වයංක්‍රීයකරණය කියන්නේ තාක්ෂණික/ව්‍යාපාරික ක්‍රියාවලි මිසක් යහපාලන මූලධර්ම නෙවෙයි."
+        ],
+        tip: `Octagon එකේ 8 මතක තියාගන්න කෙටි වචනයක්: "P R E C T E R A" (Participation, Rule of law, Effectiveness, Consensus, Transparency, Equity, Responsiveness, Accountability).`
+      },
+      {
+        id: 9,
+        part: "part3",
+        partName: "🏗️ 3 වන කොටස: e-Governance තාක්ෂණික ස්ථර 4 (Architecture Layers)",
+        q: "Citizens can access a government service through a website, mobile application, or public kiosk. Which layer of e-Governance architecture is most directly concerned with these access channels?",
+        options: [
+          "A. Data layer",
+          "B. Access layer",
+          "C. Middleware/integration layer",
+          "D. Infrastructure layer"
+        ],
+        correct: 1,
+        theory: `e-Governance Architecture එක තට්ටු 4ක ගොඩනැගිල්ලක් වගේ:<br>
+        • <strong>Access Layer (උඩම තට්ටුව):</strong> මහජනතාවට පේන, පද්ධතියට සම්බන්ධ වන Websites, Mobile Apps, Kiosks, Call Centers වැනි Channels අයත් වන්නේ Access Layer එකටයි.`,
+        whyWrong: [
+          "<strong>A (Data layer):</strong> දත්ත ගබඩා කරන Databases තියෙන තැන.",
+          "<strong>C (Middleware):</strong> පද්ධති දෙකක් එකිනෙක සම්බන්ධ කරන මැද ස්ථරය.",
+          "<strong>D (Infrastructure):</strong> Servers, Cables, Networks තියෙන යටම ස්ථරය."
+        ],
+        tip: `Website, Mobile App, Kiosk = පරිශීලකයා ඇතුළු වන දොරටුව = Access Layer!`
+      },
+      {
+        id: 10,
+        part: "part3",
+        partName: "🏗️ 3 වන කොටස: e-Governance තාක්ෂණික ස්ථර 4 (Architecture Layers)",
+        q: "A government needs to connect separate departmental databases so that their systems can exchange information. Which architecture layer is most directly responsible for this task?",
+        options: [
+          "A. Access layer",
+          "B. Application layer",
+          "C. Middleware/integration layer",
+          "D. Data layer"
+        ],
+        correct: 2,
+        theory: `විවිධ දෙපාර්තමේන්තුවල තියෙන වෙනස් Systems සහ Databases එකිනෙකට යා කරලා ආරක්ෂිතව තොරතුරු හුවමාරු කරන (Interoperability) පාලම තමයි <strong>Middleware / Integration Layer</strong> එක!`,
+        whyWrong: [
+          "<strong>ඇයි D (Data layer) නොවී C වුණේ?:</strong> ගොඩක් අය 'databases' කියන වචනේ දැක්ක ගමන් Data layer කියලා ගහනවා. හැබැයි ප්‍රශ්නේ අහන්නේ දත්ත ගබඩා කරන එක ගැන නෙවෙයි, 'connect separate databases to exchange information' (වෙනම තියෙන Databases සම්බන්ධ කරලා දත්ත හුවමාරු කරන එක) ගැනයි."
+        ],
+        tip: `"Connect separate databases" / "Exchange information between systems" = Middleware / Integration Layer!`
+      },
+      {
+        id: 11,
+        part: "part3",
+        partName: "🏗️ 3 වන කොටස: e-Governance තාක්ෂණික ස්ථර 4 (Architecture Layers)",
+        q: "Which technology is most directly associated with verifying a citizen's identity when accessing an online government service?",
+        options: [
+          "A. Digital identity systems",
+          "B. Video conferencing",
+          "C. Data warehousing",
+          "D. Groupware"
+        ],
+        correct: 0,
+        theory: `ඔන්ලයින් සේවාවකට ලොග් වෙද්දී "මේ ඉන්නේ ඇත්තම පුද්ගලයාද?" කියලා අනන්‍යතාවය තහවුරු කරන්නේ (Authentication & Verification) <strong>Digital Identity Systems</strong> (උදා: ලංකාවේ SLUDI, සිංගප්පූරුවේ SingPass) මගිනුයි.`,
+        whyWrong: [
+          "<strong>B (Video conferencing):</strong> Zoom/Teams වගේ මීටින් ගැනීම.",
+          "<strong>C (Data warehousing):</strong> විශාල දත්ත විශ්ලේෂණයට ගබඩා කිරීම.",
+          "<strong>D (Groupware):</strong> කණ්ඩායමක් එකට වැඩ කරන collaborative software."
+        ],
+        tip: `Verifying citizen's identity = Digital Identity Systems!`
+      },
+      {
+        id: 12,
+        part: "part4",
+        partName: "📊 4 වන කොටස: බාධක, දර්ශක සහ කළමනාකරණ කුළුණු",
+        q: "A rural community has access to a government portal, but many residents cannot use it because they lack digital skills. Which barrier is most directly illustrated?",
+        options: [
+          "A. Lack of data storage capacity",
+          "B. Excessive server scalability",
+          "C. Lack of interoperability standards",
+          "D. Digital literacy gap"
+        ],
+        correct: 3,
+        theory: `<strong>Digital Divide (ඩිජිටල් බෙදීම)</strong> කොටස් දෙකකින් වෙන්න පුළුවන්:<br>
+        1. ඉන්ටර්නෙට් සහ පරිගණක නැතිකම (Access gap).<br>
+        2. ඉන්ටර්නෙට් තිබුණත් පාවිච්චි කරන්න දැනුම/හැකියාව නැතිකම (<strong>Digital Literacy Gap - ඩිජිටල් සාක්ෂරතා පරතරය</strong>).<br>
+        මේ ප්‍රශ්නේ කියනවා ගමේ අයට Portal එකට යන්න පහසුකම් තියෙනවා, හැබැයි "lack digital skills" (පාවිච්චි කරන්න දැනුම නෑ).`,
+        whyWrong: [
+          "<strong>A, B, C වැරදියි:</strong> මේ තුනම තාක්ෂණික/Server පැත්තේ දේවල් මිසක් මිනිස්සුන්ගේ දැනුම ගැන කියන දේවල් නෙවෙයි."
+        ],
+        tip: `"Lack digital skills" = Digital Literacy Gap!`
+      },
+      {
+        id: 13,
+        part: "part4",
+        partName: "📊 4 වන කොටස: බාධක, දර්ශක සහ කළමනාකරණ කුළුණු",
+        q: "Which of the following is a potential disadvantage of e-Governance identified?",
+        options: [
+          "A. Improved access to information",
+          "B. Risk of cybercrime and leakage of personal information",
+          "C. Reduced processing time",
+          "D. Increased transparency"
+        ],
+        correct: 1,
+        theory: `ප්‍රශ්නේ අහන්නේ <strong>Disadvantage (අවාසියක් / අවදානමක්)</strong> ගැනයි. සියලුම දත්ත ඔන්ලයින් දැම්මම හැකර්වරුන්ගෙන් සයිබර් ප්‍රහාර එල්ල වීම (Cybercrime) සහ පුරවැසියන්ගේ පුද්ගලික දත්ත පිටවීම (Data leakage/breaches) තමයි තියෙන ලොකුම අවදානම.`,
+        whyWrong: [
+          "<strong>A, C, D වැරදියි:</strong> තොරතුරු ලබාගැනීම පහසු වීම (A), කාලය ඉතිරි වීම (C), සහ විනිවිදභාවය වැඩි වීම (D) කියන තුනම e-Governance වල ලොකුම වාසි (Advantages)."
+        ],
+        tip: `Disadvantage / Risk = Cybercrime & Personal data leakage!`
+      },
+      {
+        id: 14,
+        part: "part4",
+        partName: "📊 4 වන කොටස: බාධක, දර්ශක සහ කළමනාකරණ කුළුණු",
+        q: "The United Nations E-Government Development Index (EGDI), as described in the slides, combines which three indices?",
+        options: [
+          "A. Cybersecurity, cloud computing, and digital identity",
+          "B. Government expenditure, GDP, and population",
+          "C. Online Service Index, Telecommunication Infrastructure Index, and Human Capital Index",
+          "D. Transparency, accountability, and citizen satisfaction"
+        ],
+        correct: 2,
+        theory: `එක්සත් ජාතීන්ගේ සංවිධානය (UN) ලෝකයේ රටවල්වල e-Government දියුණුව මනින්න පාවිච්චි කරන මිනුම් දණ්ඩ තමයි <strong>EGDI</strong> කියන්නේ. මේක හැදෙන්නේ ප්‍රධාන කුළුණු 3ක සාමාන්‍යයෙන්:<br>
+        1. <strong>OSI (Online Service Index):</strong> රජයේ ඔන්ලයින් සේවාවන් කොච්චර හොඳද?<br>
+        2. <strong>TII (Telecommunication Infrastructure Index):</strong> රටේ ඉන්ටර්නෙට් සහ දුරකථන පහසුකම් කොච්චර දියුණුද?<br>
+        3. <strong>HCI (Human Capital Index):</strong> රටේ මිනිස්සුන්ගේ අධ්‍යාපන මට්ටම සහ සාක්ෂරතාවය කොහොමද?`,
+        whyWrong: [
+          "<strong>A, B, D වැරදියි:</strong> GDP, Population හෝ Cloud computing කෙලින්ම EGDI සූත්‍රයේ ප්‍රධාන දර්ශක 3 නෙවෙයි."
+        ],
+        tip: `EGDI = O + T + H (Online Service, Telecommunication Infrastructure, Human Capital).`
+      },
+      {
+        id: 15,
+        part: "part3",
+        partName: "🏗️ 3 වන කොටස: e-Governance තාක්ෂණික ස්ථර 4 (Architecture Layers)",
+        q: "Which challenge is most directly associated with the infrastructure layer of e-Governance in Sri Lanka?",
+        options: [
+          "A. Unreliable networks and limited bandwidth",
+          "B. Fear of job loss among government employees",
+          "C. Resistance to changes in administrative responsibilities",
+          "D. Low citizen awareness of online services"
+        ],
+        correct: 0,
+        theory: `ප්‍රශ්නේ අහන්නේ <strong>Infrastructure Layer (යටිතල පහසුකම් ස්ථරය)</strong> ගැනයි. Infrastructure කියන්නේ Hardware, Servers, සහ Networks. දුර්වල ජාල සම්බන්ධතා (Unreliable networks) සහ අඩු ඉන්ටර්නෙට් වේගය (Limited bandwidth) කෙලින්ම Network Infrastructure ගැටලුවක්.`,
+        whyWrong: [
+          "<strong>B, C, D වැරදියි:</strong> රැකියා නැතිවෙයි කියන බය (B), වෙනස් වීමට ඇති අකමැත්ත (C) සහ ජනතාවගේ දැනුවත්භාවය අඩුකම (D) කියන තුනම මිනිස්සු සම්බන්ධ ගැටලු (Stakeholder / Human challenges) මිසක් Infrastructure ගැටලු නෙවෙයි."
+        ],
+        tip: `Infrastructure Challenge = Networks, Bandwidth, Servers, Power!`
+      },
+      {
+        id: 16,
+        part: "part4",
+        partName: "📊 4 වන කොටස: බාධක, දර්ශක සහ කළමනාකරණ කුළුණු",
+        q: "Which option correctly identifies the four pillars of e-Governance management?",
+        options: [
+          "A. Technology, education, marketing, and finance",
+          "B. Infrastructure, service delivery, legislation, and auditing",
+          "C. Infrastructure, Governance, Resources, and Stakeholders",
+          "D. Security, databases, applications, and networking"
+        ],
+        correct: 2,
+        theory: `e-Governance ව්‍යාපෘතියක් සාර්ථකව කළමනාකරණය කරන්න නම් කුළුණු 4ක් (<strong>4 Pillars of e-Governance Management</strong>) මත ඒක ගොඩනගන්න ඕනේ:<br>
+        1. <strong>Infrastructure (යටිතල පහසුකම්):</strong> Networks, Servers, Cloud, Hardware.<br>
+        2. <strong>Governance (පාලන ව්‍යුහය):</strong> IT Policies, නීති රීති (Acts), ප්‍රමිතීන්.<br>
+        3. <strong>Resources (සම්පත්):</strong> මුදල් (Budget) සහ පුහුණු IT සේවකයින් (Skilled HR).<br>
+        4. <strong>Stakeholders (පාර්ශ්වකරුවන්):</strong> පුරවැසියන්, රජයේ සේවකයින්, ව්‍යාපාර සහ නායකත්වය.`,
+        whyWrong: [
+          "<strong>A, B, D වැරදියි:</strong> Marketing හෝ Auditing ප්‍රධාන කුළුණු 4ට අයත් නොවේ."
+        ],
+        tip: `මතක තියාගන්න කෙටි වචනය: "I G R S" (Infrastructure, Governance, Resources, Stakeholders).`
+      },
+      {
+        id: 17,
+        part: "part3",
+        partName: "🏗️ 3 වන කොටස: e-Governance තාක්ෂණික ස්ථර 4 (Architecture Layers)",
+        q: "What is the primary role of the Lanka Government Network (LGN 2.0)?",
+        options: [
+          "A. To replace all government databases with one central database.",
+          "B. To provide secure, high-speed connectivity between government institutions.",
+          "C. To manage university admission applications exclusively.",
+          "D. To issue digital identity cards to all citizens."
+        ],
+        correct: 1,
+        theory: `ලංකාවේ ප්‍රධාන ව්‍යාපෘති 4 හරියටම වෙන් කරලා මතක තියාගන්න:<br>
+        1. <strong>LGN 2.0 (Lanka Government Network):</strong> රජයේ කාර්යාල ඔක්කොම ආරක්ෂිත සහ අධිවේගී ඉන්ටර්නෙට්/ෆයිබර් ජාලයකින් එකට සම්බන්ධ කිරීම (Network Connectivity).<br>
+        2. <strong>LGC (Lanka Government Cloud):</strong> පොදු රාජ්‍ය Cloud එක.<br>
+        3. <strong>NDX & LIFe:</strong> ආයතන අතර දත්ත හුවමාරු කරන Middleware එක.<br>
+        4. <strong>SLUDI:</strong> පුරවැසියන්ට දෙන ඩිජිටල් හැඳුනුම්පත.`,
+        whyWrong: [
+          "<strong>A වැරදියි:</strong> LGN කියන්නේ Database එකක් නෙවෙයි, Network එකක්.",
+          "<strong>D වැරදියි:</strong> Digital ID දෙන්නේ SLUDI මගින්."
+        ],
+        tip: `LGN = Network = High-speed connectivity between government institutions!`
+      },
+      {
+        id: 18,
+        part: "part3",
+        partName: "🏗️ 3 වන කොටස: e-Governance තාක්ෂණික ස්ථර 4 (Architecture Layers)",
+        q: "A government agency wants to reduce the cost of purchasing and maintaining separate servers for different departments. Which infrastructure solution is most relevant?",
+        options: [
+          "A. Government employee training",
+          "B. Citizen feedback surveys",
+          "C. Public awareness campaigns",
+          "D. Shared government cloud infrastructure"
+        ],
+        correct: 3,
+        theory: `හැම දෙපාර්තමේන්තුවටම වෙන වෙනම Physical Servers සල්ලි දීලා ගන්න ගියොත් සහ ඒවා නඩත්තු කරන්න ගියොත් විශාල වියදමක් යනවා. ඒ වෙනුවට හැමෝටම බෙදාගෙන පාවිච්චි කරන්න පුළුවන් <strong>Shared Government Cloud Infrastructure</strong> (උදා: Lanka Government Cloud - LGC) එකක් පාවිච්චි කළාම වියදම විශාල ලෙස අඩු වෙනවා.`,
+        whyWrong: [
+          "<strong>A, B, C වැරදියි:</strong> මේ තුනම Infrastructure (යටිතල පහසුකම්) විසඳුම් නෙවෙයි."
+        ],
+        tip: `Reduce cost of separate servers = Shared Government Cloud Infrastructure!`
+      },
+      {
+        id: 19,
+        part: "part5",
+        partName: "⚖️ 5 වන කොටස: ශ්‍රී ලංකාවේ IT නීති සහ පනත් (Sri Lankan IT Legislation)",
+        q: "Which Sri Lankan law regulates the processing of personal data by public and private entities?",
+        options: [
+          "A. Personal Data Protection Act No. 9 of 2022",
+          "B. Computer Crimes Act No. 24 of 2007",
+          "C. Electronic Transactions Act No. 19 of 2006",
+          "D. A law dealing exclusively with electronic signatures"
+        ],
+        correct: 0,
+        theory: `රාජ්‍ය සහ පෞද්ගලික ආයතන විසින් පුරවැසියන්ගේ පුද්ගලික දත්ත (නම, NIC, දුරකථන අංක, බැංකු විස්තර) එකතු කිරීම, ගබඩා කිරීම සහ භාවිතා කිරීම (Processing of personal data) නියාමනය කරන්නේ <strong>2022 අංක 9 දරන පුද්ගලික දත්ත ආරක්ෂණ පනත (Personal Data Protection Act - PDPA)</strong> මගිනි.`,
+        whyWrong: [
+          "<strong>B (Computer Crimes Act 2007):</strong> Hacking සහ සයිබර් අපරාධවලට දඬුවම් දීම.",
+          "<strong>C (Electronic Transactions Act 2006):</strong> Digital signatures සහ e-Documents වලට නීතිමය බලය දීම."
+        ],
+        tip: `"Processing of personal data" = Personal Data Protection Act No. 9 of 2022!`
+      },
+      {
+        id: 20,
+        part: "part5",
+        partName: "⚖️ 5 වන කොටස: ශ්‍රී ලංකාවේ IT නීති සහ පනත් (Sri Lankan IT Legislation)",
+        q: "A government department accepts digitally signed electronic documents and contracts as legally valid. Which legislation is most directly relevant?",
+        options: [
+          "A. Computer Crimes Act No. 24 of 2007",
+          "B. Personal Data Protection Act No. 9 of 2022",
+          "C. Electronic Transactions Act No. 19 of 2006",
+          "D. A policy concerning public-sector employee training"
+        ],
+        correct: 2,
+        theory: `ශ්‍රී ලංකාව තුළ ඉලෙක්ට්‍රොනික ලේඛන (e-Documents), ඩිජිටල් අත්සන් (Digital Signatures) සහ ඔන්ලයින් ගිවිසුම්වලට (e-Contracts) උසාවියක පිළිගන්නා නීතිමය වලංගුභාවය (Legal validity) ලබා දෙන්නේ <strong>2006 අංක 19 දරන ඉලෙක්ට්‍රොනික ගනුදෙනු පනත (Electronic Transactions Act)</strong> මගිනි.`,
+        whyWrong: [
+          "<strong>A වැරදියි:</strong> එය සයිබර් අපරාධ සඳහා වේ.",
+          "<strong>B වැරදියි:</strong> එය පුද්ගලික දත්ත ආරක්ෂාව සඳහා වේ."
+        ],
+        tip: `"Digitally signed" / "Electronic documents" / "Legally valid" = Electronic Transactions Act No. 19 of 2006!`
+      },
+      {
+        id: 21,
+        part: "part4",
+        partName: "📊 4 වන කොටස: බාධක, දර්ශක සහ කළමනාකරණ කුළුණු",
+        q: "A government project has sufficient technology but repeatedly fails because it cannot recruit and retain skilled IT professionals. Which management pillar needs the most immediate attention?",
+        options: [
+          "A. Infrastructure",
+          "B. Resources",
+          "C. Stakeholders",
+          "D. Access channels"
+        ],
+        correct: 1,
+        theory: `ප්‍රශ්නේ කියනවා රජයට හොඳ තාක්ෂණයක් (Infrastructure) තියෙනවා, හැබැයි දක්ෂ IT වෘත්තිකයන්ව බඳවා ගන්න සහ තියාගන්න බැරි නිසා (cannot recruit and retain skilled IT professionals) ව්‍යාපෘතිය අසාර්ථක වෙනවා කියලා. මුදල් (Financial resources) සහ පුහුණු මානව සම්පත (Human resources) අයිති වෙන්නේ <strong>Resources (සම්පත්)</strong> කියන කුළුණටයි!`,
+        whyWrong: [
+          "<strong>A වැරදියි:</strong> තාක්ෂණය ප්‍රමාණවත්ව තියෙනවා කියලා ප්‍රශ්නෙම කියනවා.",
+          "<strong>D වැරදියි:</strong> Access channels කියන්නේ කළමනාකරණ කුළුණක් නෙවෙයි, Architecture layer එකක්."
+        ],
+        tip: `Skilled IT staff (HR) + Budget = Resources Pillar!`
+      },
+      {
+        id: 22,
+        part: "part4",
+        partName: "📊 4 වන කොටස: බාධක, දර්ශක සහ කළමනාකරණ කුළුණු",
+        q: "A government portal is available only in English, making it difficult for some Sinhala- and Tamil-speaking citizens to use the service. Which response best addresses this issue?",
+        options: [
+          "A. Increase the number of servers without changing the portal.",
+          "B. Restrict access to citizens who can use English.",
+          "C. Replace the portal with a paper-only service.",
+          "D. Provide Sinhala, Tamil, and English interfaces."
+        ],
+        correct: 3,
+        theory: `ලංකාවේ වෙබ් අඩවියක් ඉංග්‍රීසියෙන් විතරක් හැදුවොත් සිංහල සහ දෙමළ කතා කරන බහුතර ජනතාවට ඒකෙන් වැඩක් ගන්න බැරි වෙනවා (Language Barrier). යහපාලනයේ <strong>Inclusiveness (සියල්ලන් ඇතුළත් කරගැනීම)</strong> රැකෙන්න නම් අනිවාර්යයෙන්ම භාෂා තුනෙන්ම (Sinhala, Tamil, English) වෙබ් අඩවිය හදන්න ඕනේ.`,
+        whyWrong: [
+          "<strong>A වැරදියි:</strong> Servers වැඩි කළා කියලා භාෂා ප්‍රශ්නේ විසඳෙන්නේ නෑ.",
+          "<strong>B සහ C වැරදියි:</strong> ජනතාව කොන් කිරීම හෝ ආපහු කඩදාසිවලට යාම e-Governance වලට විරුද්ධයි."
+        ],
+        tip: `Language barrier in Sri Lanka = Provide Sinhala, Tamil, and English interfaces!`
+      },
+      {
+        id: 23,
+        part: "part6",
+        partName: "🌍 6 වන කොටස: ජාත්‍යන්තර උදාහරණ සහ සාර්ථකත්වය මැනීම (Global Case Studies)",
+        q: "In the Estonia case study, what is the main purpose of the X-Road data exchange layer?",
+        options: [
+          "A. To enable secure data exchange between connected organisations without relying on one central database for all records.",
+          "B. To store every citizen's record in a single government database.",
+          "C. To replace all government legislation with technical standards.",
+          "D. To provide internet access exclusively to private businesses."
+        ],
+        correct: 0,
+        theory: `ලෝකයේ හොඳම e-Governance තියෙන රටක් තමයි <strong>එස්තෝනියාව (Estonia)</strong>. එයාලගේ පද්ධතියේ කොඳු නාරටිය තමයි <strong>X-Road</strong> කියන්නේ.<br>
+        • හැම දෙපාර්තමේන්තුවකම දත්ත තියෙන්නේ එයාලගේම වෙනම Databases වල (Decentralized). හැබැයි අවශ්‍ය වෙලාවට ඒ ආයතන අතරේ ඉතාම ආරක්ෂිතව (Encrypted) දත්ත හුවමාරු කරගන්න හදපු පාලම (Data Exchange Layer) තමයි X-Road කියන්නේ.`,
+        whyWrong: [
+          "<strong>ගොඩක් අය වරද්දගන්න තැන (B උත්තරේ):</strong> X-Road කියන්නේ රටේම දත්ත එකම තැනක දාලා තියෙන තනි ලොකු Database එකක් (Single Central Database) නෙවෙයි! (එහෙම එක තැනක තිබ්බොත් හැකර් කෙනෙක්ට එක පාරින් මුළු රටේම දත්ත ගන්න පුළුවන්)."
+        ],
+        tip: `Estonia X-Road = Decentralized secure data exchange (NO single central database)!`
+      },
+      {
+        id: 24,
+        part: "part6",
+        partName: "🌍 6 වන කොටස: ජාත්‍යන්තර උදාහරණ සහ සාර්ථකත්වය මැනීම (Global Case Studies)",
+        q: "Which approach is associated with Singapore's SingPass example?",
+        options: [
+          "A. Removing digital identity verification from online services.",
+          "B. Requiring citizens to visit government offices for every transaction.",
+          "C. Providing secure digital access to multiple online services through a shared identity system.",
+          "D. Using separate, unrelated login credentials for every government department as the main strategy."
+        ],
+        correct: 2,
+        theory: `සිංගප්පූරුවේ පුරවැසියන්ට රජයේ ආයතන 100කින් වැඩ කරගන්න Username/Password 100ක් මතක තියාගන්න ඕනේ නෑ. ඒ වෙනුවට <strong>SingPass (Singapore Personal Access)</strong> කියන තනි ඩිජිටල් හැඳුනුම්පතෙන් (Shared Identity System / Single Sign-On - SSO) රජයේ සහ පෞද්ගලික අංශයේ සේවාවන් දහස් ගාණකට ආරක්ෂිතව ලොග් වෙන්න පුළුවන්.`,
+        whyWrong: [
+          "<strong>D වැරදියි:</strong> හැම දෙපාර්තමේන්තුවටම වෙන වෙනම Login පාවිච්චි කරන එක නවත්තන්න තමයි SingPass හැදුවේ."
+        ],
+        tip: `Singapore SingPass = Shared Identity System (Single Sign-On) for multiple online services!`
+      },
+      {
+        id: 25,
+        part: "part6",
+        partName: "🌍 6 වන කොටස: ජාත්‍යන්තර උදාහරණ සහ සාර්ථකත්වය මැනීම (Global Case Studies)",
+        q: "A government wants to evaluate whether citizens are increasingly using online services instead of visiting physical service counters. Which performance measure is most appropriate?",
+        options: [
+          "A. Number of government buildings",
+          "B. Digital take-up rate",
+          "C. Number of employees in each department",
+          "D. Total number of paper forms printed in previous years"
+        ],
+        correct: 1,
+        theory: `රජයක් කෝටි ගාණක් වියදම් කරලා ඔන්ලයින් Portal එකක් හැදුවත් වැඩක් නෑ මිනිස්සු තාමත් පෝලිමේ කවුන්ටර්වලටම එනවා නම්. මිනිස්සු කවුන්ටර්වලට එන එක නවත්තලා කොච්චර ප්‍රමාණයක් ඔන්ලයින් සේවාව පාවිච්චි කරන්න පටන් අරන්ද (User Adoption) කියලා මනින දර්ශකයට (KPI) කියන්නේ <strong>Digital take-up rate</strong> කියලයි.`,
+        whyWrong: [
+          "<strong>A, C, D වැරදියි:</strong> ගොඩනැගිලි ගණන හෝ සේවකයින් ගණන බැලුවා කියලා මිනිස්සු ඔන්ලයින් සේවාව පාවිච්චි කරනවද කියලා මනින්න බෑ."
+        ],
+        tip: `Citizens switching from physical counters to online services = Digital take-up rate!`
+      }
+    ];
+
+    // Cheat Sheet Data
+    const cheatSheetItems = [
+      { kw: "Service Delivery ONLY", ans: "e-Government" },
+      { kw: "Service + Participation + Policy + Accountability", ans: "e-Governance" },
+      { kw: "Publishing spending records / Open data", ans: "Transparency (විනිවිදභාවය)" },
+      { kw: "Citizen ↔ Government (Birth certificate, Bills)", ans: "G2C (Government to Citizen)" },
+      { kw: "Business/Company ↔ Government (Tenders, e-Procurement)", ans: "G2B (Government to Business)" },
+      { kw: "Department ↔ Ministry (Sharing databases)", ans: "G2G (Government to Government)" },
+      { kw: "Employee ↔ Government (Payroll, HR, Training)", ans: "G2E (Government to Employee)" },
+      { kw: "Websites, Mobile Apps, Kiosks", ans: "Access Layer" },
+      { kw: "Connecting separate databases / Data exchange", ans: "Middleware / Integration Layer" },
+      { kw: "Unreliable networks, Bandwidth", ans: "Infrastructure Layer" },
+      { kw: "Shared servers to reduce cost", ans: "Shared Government Cloud (LGC)" },
+      { kw: "LGN 2.0", ans: "Secure high-speed connectivity between gov institutions" },
+      { kw: "Cannot use portal due to lack of digital skills", ans: "Digital Literacy Gap" },
+      { kw: "UN EGDI 3 Indices", ans: "Online Service + Telecom Infrastructure + Human Capital" },
+      { kw: "4 Pillars of e-Governance Management", ans: "Infrastructure, Governance, Resources, Stakeholders" },
+      { kw: "Cannot recruit/retain skilled IT staff", ans: "Resources Pillar" },
+      { kw: "Personal Data Processing Law (Sri Lanka)", ans: "Personal Data Protection Act No. 9 of 2022" },
+      { kw: "Digital Signatures & e-Contracts Law (Sri Lanka)", ans: "Electronic Transactions Act No. 19 of 2006" },
+      { kw: "Hacking, Tampering, Cyber Sabotage Law", ans: "Computer Crimes Act No. 24 of 2007" },
+      { kw: "Estonia X-Road", ans: "Decentralized secure data exchange (NO single central DB)" },
+      { kw: "Singapore SingPass", ans: "Shared Digital Identity (Single Sign-On for multiple services)" },
+      { kw: "Measuring citizens switching from counters to online", ans: "Digital take-up rate" }
+    ];
+
+    // State Management
+    let currentCategory = 'all';
+    let masteredIds = JSON.parse(localStorage.getItem('egov_mastered') || '[]');
+    let quizAnswers = {};
+    let timerSeconds = 1800;
+    let timerInterval = null;
+
+    // Initialize
+    function init() {
+      renderStudyGuide();
+      renderCheatSheet();
+      renderQuiz();
+      updateMasteredUI();
+    }
+
+    // Switch Tabs
+    function switchTab(tab) {
+      ['study', 'cheatsheet', 'quiz'].forEach(t => {
+        document.getElementById(`view-${t}`).classList.add('hidden');
+        const btn = document.getElementById(`tab-${t}`);
+        btn.className = "px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white";
+      });
+      document.getElementById(`view-${tab}`).classList.remove('hidden');
+      document.getElementById(`tab-${tab}`).className = "px-3.5 py-2 rounded-lg transition-all bg-sky-500 text-white shadow-md";
+
+      if (tab === 'quiz' && !timerInterval) {
+        startQuizTimer();
+      }
+    }
+
+    // Category Filter
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = "cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-500 text-white";
+        } else {
+          btn.className = "cat-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700";
+        }
+      });
+      renderStudyGuide();
+    }
+
+    // Render Study Guide Cards
+    function renderStudyGuide() {
+      const container = document.getElementById('study-cards-container');
+      const query = document.getElementById('search-input').value.toLowerCase();
+
+      const filtered = studyData.filter(item => {
+        const matchesCat = currentCategory === 'all' || item.part === currentCategory;
+        const matchesQuery = item.q.toLowerCase().includes(query) ||
+                             item.theory.toLowerCase().includes(query) ||
+                             item.tip.toLowerCase().includes(query) ||
+                             `q${item.id}` === query;
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="glass-card rounded-2xl p-8 text-center text-slate-400">කිසිදු ප්‍රශ්නයක් හමු නොවීය. වෙනත් වචනයක් සොයා බලන්න.</div>`;
+        return;
+      }
+
+      let lastPart = '';
+      let html = '';
+
+      filtered.forEach(item => {
+        const isMastered = masteredIds.includes(item.id);
+        if (item.partName !== lastPart && currentCategory === 'all' && !query) {
+          lastPart = item.partName;
+          html += `
+            <div class="pt-4 pb-1 border-b border-slate-800">
+              <h3 class="text-base sm:text-lg font-extrabold text-sky-400">${item.partName}</h3>
+            </div>
+          `;
+        }
+
+        const optionsHtml = item.options.map((opt, idx) => {
+          const isCorrect = idx === item.correct;
+          return `
+            <div class="p-3 rounded-xl border text-xs sm:text-sm flex items-start justify-between gap-2 ${
+              isCorrect 
+                ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-200 font-semibold' 
+                : 'bg-slate-900/50 border-slate-800/80 text-slate-400'
+            }">
+              <span>${opt}</span>
+              ${isCorrect ? '<span class="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 text-[10px] font-extrabold shrink-0">✅ නිවැරදි පිළිතුර</span>' : ''}
+            </div>
+          `;
+        }).join('');
+
+        const wrongHtml = item.whyWrong.map(w => `<li class="text-xs sm:text-sm text-slate-300 leading-relaxed">• ${w}</li>`).join('');
+
+        html += `
+          <div class="glass-card rounded-2xl p-5 sm:p-6 transition-all ${isMastered ? 'border-emerald-500/40 bg-emerald-950/10' : ''}">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold">
+                Question ${item.id}
+              </span>
+              <button onclick="toggleMastered(${item.id})" class="px-3 py-1 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                isMastered 
+                  ? 'bg-emerald-500 text-slate-950' 
+                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              }">
+                <span>${isMastered ? '✓ පාඩම් කළා (Mastered)' : '○ පාඩම් කළා ලෙස ලකුණු කරන්න'}</span>
+              </button>
+            </div>
+
+            <h4 class="text-base sm:text-lg font-bold text-white mb-4 leading-snug">${item.q}</h4>
+
+            <!-- Options -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-5">
+              ${optionsHtml}
+            </div>
+
+            <!-- Deep Explanation Box -->
+            <div class="space-y-3 bg-slate-900/75 rounded-xl p-4 border border-slate-800/90">
+              <div>
+                <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">🧠 පාඩම (Core Theory)</div>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">${item.theory}</p>
+              </div>
+
+              <div class="pt-2 border-t border-slate-800/80">
+                <div class="text-xs font-bold text-rose-400 uppercase tracking-wider mb-1">❌ අනිත් උත්තර වැරදි ඇයි? (Elimination)</div>
+                <ul class="space-y-1">${wrongHtml}</ul>
+              </div>
+
+              <div class="pt-2 border-t border-slate-800/80">
+                <div class="bg-amber-500/10 border border-amber-500/25 rounded-lg p-3 flex items-start gap-2.5">
+                  <span class="text-base">💡</span>
+                  <div class="text-xs sm:text-sm text-amber-200">
+                    <strong class="text-amber-400">Exam Memory Tip:</strong> ${item.tip}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // Toggle Mastered Status
+    function toggleMastered(id) {
+      if (masteredIds.includes(id)) {
+        masteredIds = masteredIds.filter(i => i !== id);
+      } else {
+        masteredIds.push(id);
+      }
+      localStorage.setItem('egov_mastered', JSON.stringify(masteredIds));
+      updateMasteredUI();
+      renderStudyGuide();
+    }
+
+    function updateMasteredUI() {
+      const count = masteredIds.length;
+      const pct = Math.round((count / 25) * 100);
+      document.getElementById('mastered-count').textContent = `${count} / 25 (${pct}%)`;
+      document.getElementById('mastered-bar').style.width = `${pct}%`;
+    }
+
+    function resetMastered() {
+      masteredIds = [];
+      localStorage.setItem('egov_mastered', '[]');
+      updateMasteredUI();
+      renderStudyGuide();
+      showToast("පාඩම් කළ ප්‍රගතිය මුල සිට සකසන ලදී!");
+    }
+
+    // Render Cheat Sheet & Flashcards
+    function renderCheatSheet() {
+      const grid = document.getElementById('flashcards-grid');
+      const tbody = document.getElementById('cheatsheet-table-body');
+
+      grid.innerHTML = cheatSheetItems.map((item, idx) => `
+        <div onclick="this.classList.toggle('flipped')" class="flip-card h-28 cursor-pointer select-none">
+          <div class="flip-inner relative w-full h-full">
+            <div class="flip-front absolute inset-0 bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 flex flex-col justify-between hover:border-sky-500/50 transition">
+              <div class="text-[10px] font-bold text-sky-400 uppercase flex justify-between">
+                <span>Keyword #${idx + 1}</span>
+                <span>Click to flip ↻</span>
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-white leading-snug">${item.kw}</div>
+            </div>
+            <div class="flip-back absolute inset-0 bg-emerald-950/90 border border-emerald-500/40 rounded-xl p-4 flex flex-col justify-between">
+              <div class="text-[10px] font-bold text-emerald-400 uppercase">✅ නිවැරදි උත්තරේ</div>
+              <div class="text-xs sm:text-sm font-extrabold text-emerald-200 leading-snug">${item.ans}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      tbody.innerHTML = cheatSheetItems.map(item => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="py-3 px-4 font-medium text-white">${item.kw}</td>
+          <td class="py-3 px-4 font-bold text-emerald-400">${item.ans}</td>
+        </tr>
+      `).join('');
+    }
+
+    function toggleAllFlashcards() {
+      const cards = document.querySelectorAll('.flip-card');
+      const anyNotFlipped = Array.from(cards).some(c => !c.classList.contains('flipped'));
+      cards.forEach(c => {
+        if (anyNotFlipped) c.classList.add('flipped');
+        else c.classList.remove('flipped');
+      });
+    }
+
+    // Render Interactive Quiz
+    function renderQuiz() {
+      const container = document.getElementById('quiz-questions-container');
+      container.innerHTML = studyData.map(item => {
+        const selected = quizAnswers[item.id];
+        const hasAnswered = selected !== undefined;
+
+        const opts = item.options.map((opt, idx) => {
+          let btnStyle = "bg-slate-900/70 border-slate-800 text-slate-200 hover:border-sky-500/50";
+          if (hasAnswered) {
+            if (idx === item.correct) {
+              btnStyle = "bg-emerald-500/20 border-emerald-500 text-emerald-200 font-bold";
+            } else if (idx === selected && selected !== item.correct) {
+              btnStyle = "bg-rose-500/20 border-rose-500 text-rose-200";
+            } else {
+              btnStyle = "bg-slate-900/40 border-slate-800/50 text-slate-500";
+            }
+          }
+
+          return `
+            <button onclick="selectQuizAnswer(${item.id}, ${idx})" ${hasAnswered ? 'disabled' : ''} 
+              class="w-full text-left p-3 rounded-xl border text-xs sm:text-sm transition flex items-center justify-between gap-2 ${btnStyle}">
+              <span>${opt}</span>
+              ${hasAnswered && idx === item.correct ? '<span>✅</span>' : ''}
+              ${hasAnswered && idx === selected && selected !== item.correct ? '<span>❌</span>' : ''}
+            </button>
+          `;
+        }).join('');
+
+        return `
+          <div class="glass-card rounded-2xl p-5">
+            <div class="text-xs font-bold text-sky-400 mb-1">Question ${item.id}</div>
+            <h4 class="text-sm sm:text-base font-bold text-white mb-4">${item.q}</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">${opts}</div>
+            ${hasAnswered ? `
+              <div class="mt-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm space-y-1.5">
+                <div class="font-bold ${selected === item.correct ? 'text-emerald-400' : 'text-rose-400'}">
+                  ${selected === item.correct ? '🎉 නිවැරදියි! (+1 Mark)' : '❌ වැරදියි! නිවැරදි පිළිතුර: ' + item.options[item.correct]}
+                </div>
+                <div class="text-slate-300">${item.theory}</div>
+                <div class="text-amber-300 font-medium pt-1">💡 <strong>Tip:</strong> ${item.tip}</div>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+
+      updateQuizScore();
+    }
+
+    function selectQuizAnswer(qId, optIdx) {
+      quizAnswers[qId] = optIdx;
+      renderQuiz();
+    }
+
+    function updateQuizScore() {
+      let score = 0;
+      Object.keys(quizAnswers).forEach(qId => {
+        const q = studyData.find(i => i.id === parseInt(qId));
+        if (q && quizAnswers[qId] === q.correct) score++;
+      });
+      document.getElementById('quiz-score-badge').textContent = `ලකුණු: ${score} / 25`;
+    }
+
+    function resetQuiz() {
+      quizAnswers = {};
+      timerSeconds = 1800;
+      renderQuiz();
+      showToast("Quiz එක මුල සිට සකසන ලදී!");
+    }
+
+    function startQuizTimer() {
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          const m = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+          const s = String(timerSeconds % 60).padStart(2, '0');
+          document.getElementById('quiz-timer').textContent = `${m}:${s}`;
+        }
+      }, 1000);
+    }
+
+    // Share with Friends
+    function sharePortal() {
+      const shareText = `🎓 IT Policy & e-Governance (25 MCQs) සම්පූර්ණ සිංහල පැහැදිලි කිරීම්, Memory Tips සහ Cheat Sheet එක! විභාගයට කලින් මේකෙන් පාඩම් කරන්න! 🚀`;
+      if (navigator.share) {
+        navigator.share({ title: 'IT Policy & e-Governance Study Hub', text: shareText, url: window.location.href });
+      } else {
+        navigator.clipboard.writeText(shareText + " " + window.location.href);
+        showToast("Share පණිවිඩය Copy වුණා! යාළුවන්ට Paste කරන්න.");
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3000);
+    }
+
+    init();
+  </script>
+</body>
+</html>
